@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <script src="flashcard.js"></script>
+        
+    </head>
+
+    <body>
+        <header>
+            Flashcard
+        </header>
+
+        <nav>
+            <div class="topdiv">
+                <a><button  class="topmenu" onclick="changeTopic('Python')">Python</button></a>
+                <button  class="topmenu" onclick="changeTopic('Javascript')">Javascript</button>
+                <button  class="topmenu" onclick="changeTopic('HTML')">HTML & CSS</button>
+            </div>
+        </nav>
+
+        <div id=content>
+            <h1>Python Flashcards</h1>
+            <div id="flashcard">
+                <div id="fc_text">
+                    Front or back text of the flash card goes here
+                </div>
+                <div id="fc_btn">
+                    <button id="btn_flip_card" onclick="flipcard()">Flip</button>
+                </div>
+            </div>
+            <button id="btn_next_card" onclick="nextcard()">Next</button>
+        </div>
+    
+    </body>
+</html>
