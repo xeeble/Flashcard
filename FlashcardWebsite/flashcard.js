@@ -171,9 +171,9 @@ let front = true;
 const flashcardDataLength = flashcardData.length;
 
 function changeTopic(string){
+    // Take the Selected category and set the cat_id to the matching category index in the FlashcardData array
     let cat = convertToString(string);
     category = cat;
-    console.log(cat);
     for (let index = 0; index < flashcardDataLength; index++) {
         if (flashcardData[index].category == cat){
             cat_id = index;
@@ -196,13 +196,11 @@ function flipcard(){
             front = !front;
         }
     }
-    console.log(data,front);
     displayFlashCardData(data);
 }
 
 function nextcard(topic){
     //get the next card in the list of cards and display the front of it
-    //get the data from the card
     let data = "nope";
     changeTopic(topic);
 
@@ -215,7 +213,7 @@ function nextcard(topic){
         }
     for (let index = 0; index < flashcardDataLength; index++) {
         if (flashcardData[index].category == category){
-            data = flashcardData[index].cards[i].front;
+            data = flashcardData[index].cards[i].front; //get the data from the card
         }  
     }
     front = true;
@@ -223,6 +221,7 @@ function nextcard(topic){
 }
 
 function displayFlashCardData(data){
+    //Change the text on the flashcard
     let text = convertToString(data);
     document.getElementById("fc_text").innerText = text;
 
